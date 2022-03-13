@@ -4,6 +4,7 @@ import logo from '../logo.svg'
 import logoMobile from '../logoMobile.svg'
 import {Toolbar, Typography} from '@material-ui/core'
 import {makeStyles} from "@material-ui/core/styles"; 
+import { Link } from 'react-router-dom';
 
 const styles = makeStyles({
     bar:{
@@ -37,7 +38,9 @@ const styles = makeStyles({
     },
     mlAuto: {
         marginLeft:"auto",
-    }
+        textDecoration:"None"
+    },
+
 })
 
 function NavBar() {
@@ -47,7 +50,8 @@ function NavBar() {
                 <img src={logo} className={classes.logo}/> 
                 <img src={logoMobile} className={classes.logoMobile}/> 
                 <Typography variant="h6"  className={classes.mlAuto}>
-                   About
+                    <Link to='/result' className={classes.mlAuto}> Are you a Lab ? </Link>
+                   
                 </Typography>
                 {/* <Typography variant="h6" className={classes.menuItem}>
                     Blog

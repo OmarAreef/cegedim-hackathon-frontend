@@ -9,7 +9,7 @@ const StyledButton = withStyles({
     marginLeft: "auto",
     alignItems: "center",
     justifyContent: "center",
-    height: "3.5rem",
+    height: "3.8rem",
     width: "80%",
     padding: "1.25rem",
     boxSizing: "border-box",
