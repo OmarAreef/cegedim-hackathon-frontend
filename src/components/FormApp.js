@@ -10,7 +10,7 @@ const styles = makeStyles({
         textAlign: "center"
     },
     bigSpace: {
-        marginTop: "5rem"
+        marginTop: "3rem"
     },
     littleSpace: {
         marginTop: "1rem",
@@ -40,6 +40,7 @@ const FormApp = () => {
         testReason_Abroad: 0,
         testReason_Contact_with_confirmed: 0,
         testReason_Other: 1,
+        age_60_and_above: 0,
     })
 
     const updateForm = (e) => {
@@ -72,7 +73,6 @@ const FormApp = () => {
             'testReason_Contact_with_confirmed': 0
 
         }
-        let id = e.target.name
         let value = e.target.value
         let myValue = 1
         let myString = ""
@@ -95,14 +95,35 @@ const FormApp = () => {
     }
     const handleSubmit = () => {
         console.log(form)
-        axios.post('http://127.0.0.1:8000/app/results/',
-            form)
+        axios.post('http://127.0.0.1:8000/app/results/', form)
+            .then(response => {
+                console.log(response.data)
+                setResultData(response.data)
+                setRender(true)
+            })
+            .catch(error => {
+                console.log(error.message)
+            })
+    }
+    const [resultData, setResultData] = useState({})
+    const [rendering, setRender] = useState(false)
+    const renderResults = () => {
+        return (
+            <>
+                <Typography variant="h6" color="error">
+                    Your match covid symptoms by {(parseFloat(resultData.prediction)*100).toFixed(2)}% <br /> 
+                    Your ID is <b>{resultData.id}</b> to use for your discount at our partner labs<br />
+                    <b>please note that if you are feeling sick, seeking a doctor's help is the best choice.</b>
+                </Typography>
+            </>
+        )
     }
 
 
     const classes = styles();
     return (
         <>
+            {rendering && renderResults()}
             <div className={`${classes.grid} ${classes.bigSpace}`}>
                 <Typography variant="h4" color="primary">
                     Please Answer these questions below,<br /> afterwards a percentage and a coupon will appear to you for use.<br />
@@ -147,7 +168,7 @@ const FormApp = () => {
                             value={reason}
                             onChange={(event) => updateReason(event)}
                         >
-                            <MenuItem value={'travel'}>Travelling</MenuItem>
+                            <MenuItem value={'travel'}>Have been abraod</MenuItem>
                             <MenuItem value={'contact'}>Contact with a confirmed case</MenuItem>
                             <MenuItem value={'other'}>other</MenuItem>
                         </Select>

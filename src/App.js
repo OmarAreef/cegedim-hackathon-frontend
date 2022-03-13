@@ -59,7 +59,7 @@ function App() {
           <Grid icon={<AccessibleIcon style={{ fill: "#D05B2D", height: "60", width: "60" }} />} title="Your Health" btnTitle="Show me More" /> */}
         <Grid icon={<ImportExportIcon style={{ fill: "#5EA780", height: "60", width: "60" }} />} title="24/7" btnTitle="Show me More" />
         {/* <Grid icon={<ComputerIcon style={{ fill: "#E69426", height: "60", width: "60" }} />} title="Multi-Platform" btnTitle="Show me More" /> */}
-        <Grid icon={<HttpIcon style={{ fill: "#2EA09D", height: "60", width: "60" }} />} title="Always can reach us  " btnTitle="Show me More" />
+        <Grid icon={<HttpIcon style={{ fill: "#2EA09D", height: "60", width: "60" }} />} title="Always can reach us" btnTitle="Show me More" />
       </div>
       <div >
         <Footer />
