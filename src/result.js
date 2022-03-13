@@ -1,9 +1,10 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
-import {makeStyles } from '@material-ui/core/styles';
 
+import {makeStyles } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom';
 import Navbar from './components/navbar';
 import FormApp from './components/FormApp';
+import ResultApp from './components/resultapp'
 
 import './App.css';
 
@@ -16,16 +17,16 @@ const styles = makeStyles({
     
   })
 
-function Form() {
+function result() {
     const classes = styles();
 
     return (
         <div className="App">
-            <Navbar />
-            < FormApp />
+          
+            < ResultApp />
         </div>
     );
 }
 
 
-export default Form
+export default result

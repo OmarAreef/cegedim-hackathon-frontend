@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { FormControlLabel, FormGroup, Switch, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom';
 
 const styles = makeStyles({
     wrapper: {
@@ -60,7 +61,17 @@ const FormApp = () => {
                     <FormControlLabel labelPlacement="start" control={<Switch id='age_60_and_above'
                         onChange={(event) => updateForm(event)} />} label="Label" />
                 </FormGroup >
-
+            </div>
+             <div>
+                <Typography variant="h4" color="primary">
+                    check your result
+                </Typography>
+                <ul>
+                <Link to="/result"><button>
+              Go to Page 2 
+            </button>
+             </Link>
+                </ul>
             </div>
         </>
     )

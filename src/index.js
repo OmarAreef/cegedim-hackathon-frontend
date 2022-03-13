@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './index.css';
 import App from './App';
 import Form from './Form'
+import Result from './result';
 import { createTheme, ThemeProvider, makeStyles } from '@material-ui/core/styles';
 
 const theme = createTheme({
@@ -44,6 +45,7 @@ ReactDOM.render(
 
         <Route path="/" element={<App />} />
         <Route path="/form" element={<Form />} />
+        <Route path="/result" element={<Result />} />
 
       </Routes>
     </Router>
