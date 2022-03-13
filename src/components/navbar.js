@@ -34,6 +34,9 @@ const styles = makeStyles({
         },
         ['@media (max-width:780px)']: { 
             paddingBottom: "1rem"    }
+    },
+    mlAuto: {
+        marginLeft:"auto",
     }
 })
 
@@ -43,22 +46,21 @@ function NavBar() {
             <Toolbar position="sticky" color="rgba(0, 0, 0, 0.87)" className={classes.bar}>   
                 <img src={logo} className={classes.logo}/> 
                 <img src={logoMobile} className={classes.logoMobile}/> 
-                <Typography variant="h6" className={classes.menuItem}>
+                <Typography variant="h6"  className={classes.mlAuto}>
                    About
                 </Typography>
-                <Typography variant="h6" className={classes.menuItem}>
+                {/* <Typography variant="h6" className={classes.menuItem}>
                     Blog
-                </Typography>
-                <Typography variant="h6" className={classes.menuItem}>
+                </Typography> */}
+                <Typography variant="h6" >
                     Careers
                 </Typography>
-                <Typography variant="h6" className={classes.menuItem}>
+                {/* <Typography variant="h6" className={classes.menuItem}>
                     Demos 
-                </Typography>
-                <Typography variant="h6" className={classes.menuItem}>
+                </Typography> */}
+                <Typography variant="h6" >
                     Contact Us 
                 </Typography>
-                <Custombutton txt="Try Our Idea !"/>
             </Toolbar>
     )
 }
