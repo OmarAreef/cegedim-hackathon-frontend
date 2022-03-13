@@ -1,7 +1,6 @@
 import React from 'react';
 
 
-
 import Navbar from './components/navbar';
 import Grid from './components/grid';
 import Footer from './components/Footer'
